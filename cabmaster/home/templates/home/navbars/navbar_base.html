@@ -1,0 +1,56 @@
+{% load static %}
+
+<header>
+    <div class="px-3 py-2 border-bottom" style="background-color: #0c4d8a;">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    <img src="{% static 'home/img/logo_white_transparent.png' %}" alt="Logo" width="90" id="home">
+                </a>
+
+                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                    <li class="nav-item"><a href="tel:+33765851596" class="nav-link"><i
+                                class="bi bi-phone icon text-white"></i></a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="https://api.whatsapp.com/send?phone=33765851596&text=I%20need%20a%20drive%20with%20Cabmaster%20!"
+                            target="_blank"><i class="bi bi-whatsapp icon text-white"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://telegram.im/@rayanworkout" target="_blank"><i
+                                class="bi bi-telegram icon text-white"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="mailto:contact.cabmaster@gmail.com"><i
+                                class="bi bi-envelope-at-fill icon text-white"></i></a></li>
+                </ul>
+                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small text-center">
+                    <li>
+                        <a href="tel:+33765851596" class="nav-link text-white">
+                            (+33) 7 65 85 15 96
+                        </a>
+                        <a href="mailto:contact.cabmaster@gmail.com" class="nav-link text-white fw-bold top-email">
+                            contact.cabmaster@gmail.com
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="px-3 py-2 border-bottom" style="background-color: #1c1c1c;">
+        <div class="container d-flex flex-wrap justify-content-center m-2 mx-auto">
+            <div class="text-end">
+                <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 d-flex flex-md-row">
+                    <li class="active-item">
+                        <a href="{% url 'home' %}" class="nav-link text-white">
+                            Accueil
+                        </a>
+                    </li>
+                    {% block content %}
+                    {% block second_cta %}
+                    {% endblock %}
+                    {% endblock %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+</body>

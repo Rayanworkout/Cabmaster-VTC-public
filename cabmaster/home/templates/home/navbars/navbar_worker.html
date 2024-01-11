@@ -1,0 +1,25 @@
+{% extends "home/navbars/navbar_base.html" %} {% load static %}
+
+{% block content %}
+
+
+<li class="active-item">
+    <a href="{% url 'worker_profile' user.worker.id %}" class="nav-link item text-white">
+        <i class="bi bi-speedometer"></i> Tableau de Bord
+    </a>
+</li>
+
+
+<li class="active-item">
+    <a href="{% url 'worker_profile_archives' user.worker.id %}" class="nav-link item text-white">
+        <i class="bi bi-archive"></i> Archives
+    </a>
+</li>
+
+<li>
+    <a class="nav-link item text-white" href="{% url 'logout' %}"><i class="bi bi-box-arrow-right"></i>
+        Déconnexion</a>
+</li>
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "home/email/email_base.html" %}
+
+{% block title %}<title>Confirmation: Message Reçu</title>{% endblock %}
+
+{% block content %}
+
+
+<h1>Message reçu !</h1>
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Merci {{ name }},</p>
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Nous confirmons la réception de votre demande et
+    apprécions grandement votre
+    intérêt pour nos services.</p>
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Notre équipe examinera votre message et vous
+    répondra dans les meilleurs délais, généralement dans les
+    <strong>2 heures qui suivent la réception.</strong>
+</p>
+
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Si vous avez d'autres questions ou si vous avez
+    besoin d'une assistance immédiate, n'hésitez pas à nous
+    <a style="color: #ffffff;" href="tel:0765851596">contacter par téléphone</a>, nous sommes joignables à tout moment.
+</p>
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Cordialement,<br>L'équipe Cabmaster.</p>
+
+
+<i>Ceci est un message automatique, merci de ne pas y répondre.</i>
+
+
+
+
+{% endblock %}

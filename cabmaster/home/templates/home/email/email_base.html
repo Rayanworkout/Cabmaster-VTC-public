@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS (version 5.3.2) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    {% block title %} {% endblock %}
+
+    {% block header %}{% endblock %}
+
+</head>
+
+<body
+    style="background-color: #1c1c1c; color: #ffffff; font-family: 'Poppins', sans-serif; list-style: none; margin: 0; padding: 0;">
+    <div class="container" style="max-width: 600px; margin: 0 auto; padding: 20px;">
+        <div class="header" style="text-align: center; margin-bottom: 30px;">
+        </div>
+        <div class="content" style="background-color: #2b2b2b; padding: 30px; border-radius: 10px;">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="https://www.cabmaster.fr/" target="_blank"
+                        class="nav-link px-2 text-white">Visiter notre site</a></li>
+                <li class="nav-item"><a href="https://www.cabmaster.fr/reservation/" target="_blank"
+                        class="nav-link px-2 text-white">Réserver</a>
+                </li>
+                <li class="nav-item"><a href="https://www.cabmaster.fr/#services-section" target="_blank"
+                        class="nav-link px-2 text-white">Services</a>
+                </li>
+                <li class="nav-item"><a href="https://www.cabmaster.fr/faq" target="_blank"
+                        class="nav-link px-2 text-white">F.A.Q</a></li>
+
+                <li class="nav-item"><a href="tel:0765851596" class="nav-link px-2 text-white">Contact
+                        Direct</a></li>
+
+            </ul>
+            <p class="text-center text-white">&copy; 2023 Cabmaster, Inc</p>
+        </footer>
+    </div>
+</body>
+
+</html>

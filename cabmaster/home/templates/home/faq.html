@@ -1,0 +1,113 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+{% block title %}<title>Questions Fréquentes - Cabmaster</title> {% endblock %}
+
+<style>
+    body {
+        background-color: var(--background-color);
+    }
+</style>
+
+
+<section id="faq" class="py-md-5">
+    <div class="container">
+        <h2 class="py-3 border-bottom display-4 text-white text-center">Questions Fréquentes</h2>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item p-3">
+                <h5 class="accordion-header text-center" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Quels types de véhicules proposez-vous pour les transferts ?
+                    </button>
+                </h5>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Nous offrons une gamme variée de véhicules, allant des voitures standard
+                        aux véhicules haut de
+                        gamme, pour répondre à vos besoins spécifiques en matière de confort et de capacité.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item p-3">
+                <h5 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Puis-je choisir mon chauffeur préféré pour une course ?
+                    </button>
+                </h5>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Oui, vous avez la possibilité de sélectionner un chauffeur préféré si
+                        vous avez déjà effectué des
+                        trajets avec lui. Autrement, notre système assignera le chauffeur disponible le plus proche pour
+                        assurer un service rapide.</div>
+                </div>
+            </div>
+            <div class="accordion-item p-3">
+                <h5 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Y a-t-il des frais additionnels pour les réservations de dernière minute ?
+                    </button>
+                </h5>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Nos tarifs restent constants pour les réservations régulières.
+                        Cependant, pour les réservations de
+                        dernière minute ou en cas de changements spécifiques, des frais additionnels peuvent
+                        s'appliquer.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item p-3">
+                <h5 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Comment sont sélectionnés et formés vos chauffeurs ?
+                    </button>
+                </h5>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Nos chauffeurs passent par un processus de sélection rigoureux et une
+                        formation approfondie pour
+                        assurer un service de qualité, incluant la connaissance des itinéraires, la courtoisie et la
+                        sécurité.</div>
+                </div>
+            </div>
+            <div class="accordion-item p-3">
+                <h5 class="accordion-header" id="flush-headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                        Quelle est votre politique en matière d'annulation de trajets ?
+                    </button>
+                </h5>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Vous pouvez annuler vos réservations selon nos politiques d'annulation.
+                        Des frais peuvent
+                        s'appliquer en fonction du délai d'annulation.</div>
+                </div>
+            </div>
+            <div class="accordion-item p-3">
+                <h5 class="accordion-header" id="flush-headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                        Comment puis-je obtenir un reçu de ma course ?
+                    </button>
+                </h5>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Les reçus de vos trajets sont automatiquement générés et disponibles
+                        dans votre compte
+                        utilisateur sur notre application ou sur demande par e-mail.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

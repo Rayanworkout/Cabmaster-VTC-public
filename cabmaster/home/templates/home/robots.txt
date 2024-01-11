@@ -1,0 +1,8 @@
+User-agent: *
+disallow: /admin/
+disallow: /chauffeurs/
+disallow: /clients/
+disallow: /partenaires/
+disallow: /courses/
+disallow: /deconnexion/
+disallow: /api/

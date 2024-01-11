@@ -1,0 +1,414 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+{% block title %}<title>Accueil - Cabmaster</title> {% endblock %}
+
+
+<style>
+    body {
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+<section>
+    <div class="hero-section">
+        <div class="image-container">
+            <img src="{% static 'home/img/vtc_mercedes_reversed.jpg' %}" width="1043" height="756" alt="Your Image"
+                class="img-fluid">
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="text-center text-md-start text-content">
+                        <div class="text-background">
+                            <h1 class="display-4">Cabmaster, le VTC par excellence.
+                            </h1>
+                            <p class="text-white hook">Votre trajet en toute sérénité avec nos chauffeurs
+                                professionnels.
+                            </p>
+                            <a href="#who-are-we"><button class="secondary-btn rounded-pill know-more-first">En
+                                    savoir plus <i class="bi bi-arrow-right-circle"></i></button></a>
+                            <a href="{% url 'reservation_page' %}"><button class="primary-btn main-cta rounded-pill">Je
+                                    Réserve <i class="bi bi-arrow-right-circle text-white"></i>
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="py-5">
+    <div class="container services-section" id="services-section">
+        <h2 class="pb-2 border-bottom display-5 justify-content-center text-white text-center">Nos Prestations</h2>
+
+        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg services">
+                    <img src="{% static 'home/img/airport_presta.jpg' %}" alt="transfert aéroport">
+                    <div class="text-background-services">
+                        <div
+                            class="d-flex flex-column h-100 p-3 p-lg-5 pb-3 text-white text-shadow-1 justify-content-center">
+                            <h3 class="display-7 lh-1 fw-bold text-align-center">Transferts Aéroportuaires</h3>
+                            <div class="text-white">Transferts fiables et confortables depuis / vers les aéroports et
+                                gares.
+                                Un voyage sans
+                                tracas et
+                                en
+                                temps et en heure.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg services">
+                    <img src="{% static 'home/img/city_road.jpg' %}" alt="city highroad by night">
+                    <div class="text-background-services h-100">
+                        <div class="d-flex flex-column h-100 p-3 p-lg-5 pb-3 text-white text-shadow-1">
+                            <h3 class="display-7 lh-1 fw-bold">Déplacements Professionnels</h3>
+                            <div class="text-white">Solutions de transport efficaces pour vos besoins professionnels.
+                                Arrivez à l'heure et avec élégance.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg services">
+                    <img src="{% static 'home/img/toyota.jpg' %}" alt="toyota chr">
+                    <div class="text-background-services h-100">
+                        <div class="d-flex flex-column h-100 p-3 p-lg-5 pb-3 text-white text-shadow-1">
+                            <h3 class="display-7 lh-1 fw-bold">Mise à Disposition</h3>
+                            <div class="text-white">Fini l'attente, notre chauffeur reste à votre disposition pendant
+                                que
+                                vous vaquez à vos occupations.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col city-tour">
+                <div class="card card-cover h-100 overflow-hidden rounded-4 shadow-lg services">
+                    <img src="{% static 'home/img/marseille.jpg' %}" alt="marseille cathédrale de la major">
+                    <div class="text-background-services">
+                        <div class="d-flex flex-column h-100 p-3 p-lg-5 pb-3 text-white text-shadow-1">
+                            <h3 class="display-7 lh-1 fw-bold ">Visite de la Ville</h3>
+                            <div class="text-white">Visitez les plus beaux endroits de notre magnifique ville avec nos
+                                chauffeurs locaux et amicaux, en toute sécurité.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="who-are-we" class="py-md-5">
+    <div class="container">
+        <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+            <div class="col-12 col-lg-6 col-xl-5">
+                <div class="img-container text-center">
+                    <img class="img-fluid rounded" loading="lazy"
+                        src="{% static 'home/img/logo_white_transparent.png' %}" alt="Cabmaster logo" width="70%">
+                </div>
+
+            </div>
+            <div class="col-12 col-lg-6 col-xl-7">
+                <div class="row justify-content-xl-center">
+                    <div class="col-12 col-xl-11">
+
+                        <h2 class="mb-3 pb-2 border-bottom display-5 text-white text-center">Qui sommes-nous?</h2>
+                        <p class="lead mb-3 hook text-white mt-2">CabMaster est un service de transport de personnes qui
+                            opère dans toute la région Provence Alpes Côte
+                            d’Azur.
+                        </p>
+                        <p class="lead mb-5 hook text-white">Notre équipe de chauffeurs chevronnés et notre flotte bien
+                            entretenue
+                            garantissent un voyage
+                            en
+                            toute tranquillité.</p>
+
+                        <p class="lead  hook text-white">
+                            Nous vous accompagnons dans tous vos trajets, que cela soit un transfert aéroport / gare,
+                            un déplacement professionnel ou tout autre besoin.
+                        </p>
+                        <a href="{% url 'about' %}" class="text-white">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section id="gammes" class="py-md-5">
+    <div class="container py-3">
+        <header class="py-5">
+            <h2 class="py-3 border-bottom display-4 text-white text-center">Nos Gammes de Véhicules</h2>
+        </header>
+        <main>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm" style="border: none;">
+                        <div class="card-header py-3 text-white"
+                            style="background: linear-gradient(to right, #194b7a, #0d4c86, #0366C0);">
+                            <h4 class="my-0 fw-normal">Éco-Confort</h4>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title pricing-card-title">Le confort accessible.</h3>
+                            <ul class="list-unstyled mt-3 mb-4 card-content">
+                                <li class="mb-2">La qualité Cabmaster à un tarif abordable.</li>
+                                <li class="mb-2">Confortable, accessible et pratique.</li>
+                                <li>Idéal pour les trajets de courte distance à tout moment.</li>
+
+                            </ul>
+                            <a href="{% url 'reservation_page' %}"><button
+                                    class="secondary-btn rounded-pill btn-why-us">Calculer
+                                    <i class="bi bi-arrow-right-circle text-white"></i>
+                                </button></a>
+                            <a href="{% url 'reservation_page' %}"><button class="primary-btn rounded-pill">Je Réserve
+                                    <i class="bi bi-arrow-right-circle text-white"></i>
+                                </button></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 shadow-sm" style="border: none;">
+                        <div class="card-header py-3 text-white"
+                            style="background: linear-gradient(to right, #194b7a, #0d4c86, #0366C0);">
+                            <h4 class="my-0 fw-normal">Berline</h4>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title pricing-card-title">L'élégance incarnée.</h3>
+                            <ul class="list-unstyled mt-3 mb-4 card-content">
+                                <li class="mb-2">Confort, élégance et style sont les maîtres mots de la gamme Berline.
+                                </li>
+                                <li class="pb-2">Un véhicule prestigieux pour vous offrir un trajet irréprochable en
+                                    toute sécurité.</li>
+
+
+                            </ul>
+                            <a href="{% url 'reservation_page' %}"><button
+                                    class="secondary-btn rounded-pill btn-why-us">Calculer
+                                    <i class="bi bi-arrow-right-circle text-white"></i>
+                                </button></a>
+                            <a href="{% url 'reservation_page' %}"><button class="primary-btn rounded-pill">Je Réserve
+                                    <i class="bi bi-arrow-right-circle text-white"></i>
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 shadow-sm" style="border: none; border-radius: 10px;">
+                        <div class="card-header py-3 text-white"
+                            style="background: linear-gradient(to right, #194b7a, #0d4c86, #0366C0);">
+                            <h4 class="my-0 fw-normal">Van</h4>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title pricing-card-title">Spacieux, agréable, convivial.</h3>
+                            <ul class="list-unstyled mt-3 mb-4 card-content">
+                                <li class="mb-2">Spacieux et prestigieux, un confort optimal.</li>
+                                <li>Idéal pour les groupes ou si vous avez besoin d'espace.</li>
+                            </ul>
+                            <a href="{% url 'reservation_page' %}"><button
+                                    class="secondary-btn rounded-pill btn-why-us">Calculer
+                                    <i class="bi bi-arrow-right-circle text-white"></i>
+                                </button></a>
+                            <a href="{% url 'reservation_page' %}"><button class="primary-btn rounded-pill">Je Réserve
+                                    <i class="bi bi-arrow-right-circle text-white"></i>
+                                </button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</section>
+
+
+
+
+
+
+<section id="faq" class="py-5">
+    <div class="container">
+        <h2 class="py-3 border-bottom display-4 text-white text-center">F.A.Q</h2>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item p-3">
+                <h5 class="accordion-header text-center" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Comment réserver une course ?
+                    </button>
+                </h5>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Pour réserver un trajet, deux options possibles.<br><br>Vous pouvez
+                        nous
+                        contacter <a href="tel:+33765851596" class="text-white">par téléphone</a> ou utiliser notre <a
+                            href="{% url 'reservation_page' %}" class="text-white">formulaire de
+                            réservation</a>.<br><br>Il
+                        vous suffit de
+                        spécifier
+                        l'adresse de départ, la destination et l'heure de prise en charge ainsi que la gamme de véhicule
+                        souhaitée.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item p-3">
+                <h5 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Est-il possible de réserver un trajet à l'avance ?
+                    </button>
+                </h5>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Oui, vous pouvez planifier vos trajets à l'avance en spécifiant la date
+                        et l'heure de départ souhaitées lors de la réservation.</div>
+                </div>
+            </div>
+            <div class="accordion-item p-3">
+                <h5 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Proposez-vous des services sur-mesure ?
+                    </button>
+                </h5>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Oui, il est possible de prévoir une prestation en fonction d'un besoin
+                        précis. Cabmaster vous accompagne pour tous vos évènements privés ou professionnels.<br><br>
+                        <a href="#contact" class="text-white">Contactez-nous</a> pour toute demande de prestation
+                        personnalisée.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item p-3">
+                <h5 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                        Comment payer mon trajet ?
+                    </button>
+                </h5>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Nous acceptons les paiements par carte bancaire ainsi
+                        qu'en espèces à bord du véhicule.</div>
+                </div>
+            </div>
+            <div class="text-white pt-5 text-center">D'autres questions ? <a href="{% url 'faq' %}"
+                    class="text-white">Consultez notre
+                    FAQ complète</a></div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="py-md-5">
+    <div class="container py-5">
+        <h2 class="mb-3 pb-2 border-bottom display-5 text-white text-center">Pourquoi Cabmaster ?</h2>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-4 justify-content-between why-us-features text-center">
+            <div class="feature col framed-feature text-white">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                    <i class="bi bi-currency-euro"></i>
+                </div>
+                <h3 class="fs-2">Tarifs Clairs</h3>
+                <p class="pb-3">Nos prix sont prévus d'avance et ne comportent aucun frais caché. Transparence
+                    totale,
+                    pas de surprise à
+                    l'arrivée !</p>
+                <a href="{% url 'reservation_page' %}"><button class="primary-btn rounded-pill">Je Réserve <i
+                            class="bi bi-arrow-right-circle"></i>
+                    </button></a>
+            </div>
+            <div class="feature col framed-feature">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                    <i class="bi bi-lightning-charge text-white"></i>
+                </div>
+                <h3 class="fs-2 text-white">Réactivité</h3>
+                <p class="text-white">Nous sommes ravis de vous accueillir par téléphone, par mail et via notre site
+                    internet tous les jours de
+                    la semaine et à toute heure.</p>
+                <a href="{% url 'reservation_page' %}"><button class="primary-btn rounded-pill">Je Réserve <i
+                            class="bi bi-arrow-right-circle text-white"></i>
+                    </button></a>
+            </div>
+            <div class="feature col framed-feature">
+                <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
+                    <i class="bi bi-emoji-smile text-white"></i>
+                </div>
+                <h3 class="fs-2 text-white">Éthique</h3>
+                <p class="text-white">La satisfaction client est au coeur de notre mission. Nous travaillons sans
+                    relâche
+                    pour
+                    garantir un service qui dépasse vos attentes.</p>
+                <a href="{% url 'reservation_page' %}"><button class="primary-btn rounded-pill">Je Réserve <i
+                            class="bi bi-arrow-right-circle text-white"></i>
+                    </button></a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<section id="contact" class="py-md-5">
+    <div class="container">
+        <h2 class="mb-3 pb-2 border-bottom display-5 text-white text-center">Contact</h2>
+        <div class="row pt-5">
+            <div class="col-md-6">
+                <div class="form-container">
+                    <form action="POST" class="contact-form">
+                        {% csrf_token %}
+                        {{ form.name }}
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{ form.email }}
+                            </div>
+                            <div class="col-md-6">
+                                {{ form.phone_number }}
+                            </div>
+                        </div>
+                        {{ form.subject }}
+                        {{ form.message }}
+                        <div class="text-center contact-btn">
+
+                            <button class="primary-btn rounded-pill" id="contact-button">Envoyer <i class="bi bi-send"
+                                    id="contact-send-icon"></i></button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-md-6 map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d301576.74117926985!2d5.687757745344546!3d43.34998931383177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1700773717975!5m2!1sfr!2sfr"
+                    style="border:0;" allowfullscreen="true" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<script src="{% static 'home/js/contact_form.js' %}"></script>
+{% endblock %}

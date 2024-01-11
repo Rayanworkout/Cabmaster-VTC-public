@@ -1,0 +1,53 @@
+{% extends "home/email/email_base.html" %}
+
+{% block title %}<title>Confirmation: Réservation Confirmée</title>{% endblock %}
+
+{% block content %}
+
+
+<h1>Réservation Confirmée !</h1>
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Merci {{ name }},</p>
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Nous confirmons votre réservation et vous
+    remercions de votre confiance envers Cabmaster.</p>
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Les détails de votre réservation sont les
+    suivants:</p>
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">
+
+    <strong>Départ:</strong> {{ pickup_address }}<br>
+    <strong>Arrivée:</strong> {{ destination }}<br><br>
+
+    <strong>Date de départ:</strong> {{ wanted_date }}<br>
+    <strong>Heure de départ:</strong> {{ wanted_time }}<br><br>
+    <strong>Nombre de passagers:</strong> {{ passengers }}<br>
+    <strong>Grandes Valises:</strong> {{ big_cases }}<br>
+    <strong>Petites Valises:</strong> {{ small_cases }}<br><br>
+    <strong>Prix:</strong> {{ course_price }} €<br>
+    <strong>Mode de paiement:</strong> {{ payment_mode }}<br>
+    <strong>Coordonnées:</strong> {{ customer_phone_number }}<br>
+
+</p>
+
+{% if comments %}
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">
+    Commentaires: {{ comments }}<br>
+</p>
+{% endif %}
+
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Si vous avez d'autres questions ou si vous avez
+    besoin d'une assistance immédiate, n'hésitez pas à nous
+    <a style="color: #ffffff;" href="tel:0765851596">contacter par téléphone</a>, nous sommes joignables à tout moment.
+</p>
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Cordialement,<br>L'équipe Cabmaster.</p>
+
+
+<i>Ceci est un message automatique, merci de ne pas y répondre.</i>
+
+
+
+
+{% endblock %}

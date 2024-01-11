@@ -1,0 +1,41 @@
+{% extends "home/navbars/navbar_base.html" %} {% load static %}
+
+{% block content %}
+
+<li class="active-item">
+    <a href="{% url 'login' %}" class="nav-link item text-white">
+        Connexion
+    </a>
+</li>
+<li class="active-item">
+    <a href="{% url 'contact_worker' %}" class="nav-link item text-white">
+        Partenaires
+    </a>
+</li>
+<li>
+    <a href="{% url 'home' %}#contact" class="nav-link item text-white">
+        Contact
+    </a>
+</li>
+<li>
+    <a href="{% url 'home' %}#services-section" class="nav-link text-white item">
+        Services
+    </a>
+</li>
+<li class="active-item">
+    <a href="{% url 'about' %}" class="nav-link text-white item">
+        À Propos
+    </a>
+</li>
+{% block second_cta %}
+{% if request.path != reservation_view %}
+<ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0">
+    <li>
+        <a href="{% url 'reservation_page' %}" class="second-cta-container">
+            <button class="primary-btn rounded-pill px-4 text-white second-cta">Réserver</button>
+        </a>
+    </li>
+</ul>
+{% endif %}
+{% endblock %}
+{% endblock %}

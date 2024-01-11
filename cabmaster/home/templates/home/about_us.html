@@ -1,0 +1,89 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+{% block title %}<title>À Propos - Cabmaster</title> {% endblock %}
+
+<style>
+    body {
+        background-color: var(--background-color);
+    }
+</style>
+
+
+<section id="who-are-we" class="py-5 d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+            <h2 class="mb-3 pb-2 border-bottom display-5 text-white text-center">À propos de nous</h2>
+            <div class="col-12 col-lg-6 col-xl-7 mx-auto">
+                <div class="row justify-content-xl-center">
+                    <div class="col-12 col-xl-11">
+
+                        <p class="lead mb-4 hook text-white"> CabMaster est une entreprise de VTC basée à Marseille
+                            et qui opère dans toute la région Provence Alpes Côte d’Azur.
+                        </p>
+
+                        <p class="lead mb-4 hook text-white">
+                            Nous offrons des services de
+                            transport privé de qualité supérieure, avec des chauffeurs professionnels, fiables et
+                            courtois,
+                            pour des transferts aéroport, des déplacements d'affaires ou des excursions touristiques.
+                        </p>
+                        <div class="text-center my-3">
+                            <img class="about-us-img" src="{% static 'home/img/marseille.jpg' %}" alt="">
+                        </div>
+                        <p class="lead mb-4 hook text-white">
+                            Notre engagement envers la satisfaction de nos clients est
+                            notre priorité absolue, c'est pourquoi nous nous efforçons de fournir un service d'une
+                            qualité irréprochable.
+
+                        <p class="lead mb-4 hook text-white">
+                            Choisir Cabmaster, c'est profiter de notre expertise et s'assurer confort, ponctualité et
+                            sécurité à chaque trajet, peu importe la distance.
+                        </p>
+
+
+                        </p>
+                        <p class="lead mb-4 hook text-white">
+
+                            Nos chauffeurs seront en mesure de vous accompagner pour tous vous besoins, tout en faisant
+                            preuve
+                            de discrétion, courtoisie et professionnalisme.
+
+                        </p>
+                        <p class="lead mb-4 hook text-white">
+                            Nous nous adaptons à vos besoins spécifiques, que vous soyez seul, en
+                            famille ou en groupe.
+                        </p>
+                        <p class="lead mb-4 hook text-white">
+
+                            Tous nos chauffeurs suivent un processus de formation rigoureux et sont triés sur le volet.
+
+                            L'objectif de Cabmaster est clair: 100% de satisfaction client et une relation privilégiée
+                            avec chacun. </p>
+
+                        <p class="lead mb-4 hook text-white">
+                            Notre équipe est joignable via de multiples canaux à tout moment de la journée, 7 jours sur
+                            7.
+                        </p>
+                        <p class="lead mb-4 hook text-white">
+
+                            Au cœur de la région Provence Alpes Côte d’Azur, nous sommes fiers de vous offrir une
+                            expérience de transport raffinée et sans tracas.
+                        </p>
+
+                        <p class="mb-4 hook text-white">
+                            Confiez-nous vos déplacements et profitez
+                            du trajet en toute quiétude avec CabMaster.
+                        </p>
+
+                        <a href="{% url 'faq' %}" class="text-white">Questions Fréquentes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

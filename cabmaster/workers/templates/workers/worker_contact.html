@@ -1,0 +1,83 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block content %}
+
+{% block title %}<title>Rejoindre - Cabmaster</title> {% endblock %}
+
+<style>
+    body {
+        background-color: var(--background-color);
+    }
+
+
+    .text-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Adjust the background color and opacity */
+    }
+
+    .text-overlay h2 {
+        margin: 0;
+        color: white;
+        /* Additional styles for your text */
+    }
+</style>
+
+
+<section id="contact" class="py-md-5">
+    <div class="container position-relative">
+        <h2 class="py-3 border-bottom display-4 text-white text-center">Rejoindre Cabmaster</h2>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="p-3 mt-4">
+                    <h3 class="text-white text-center py-3 display-7">Envie d'une nouvelle source de
+                        revenus ?</h3>
+                    <h4 class="text-white text-center py-md-3"><strong>On Recrute !</strong></h4>
+                    <div class="text-center" style="font-size: large;">
+                        <img src="{% static 'home/img/receptionniste_small.jpg' %}" alt="image receptionniste"
+                            class="img-fluid" style="border-radius: 10px;">
+                        <p class="text-white py-4"><i class="bi bi-arrow-right"></i> Vous exercez en région PACA dans un
+                            secteur où la clientèle a
+                            besoin
+                            d'un
+                            service de transport à toute heure
+                            <b>(Hôtellerie,
+                                Restauration de Luxe ...) ?</b>
+                        </p>
+                        <p class="text-white py-3"><i class="bi bi-arrow-right"></i> Vous avez un téléphone / ordinateur
+                            et vous savez vous en servir ?
+                            Alors vous êtes prêt(e) pour rejoindre notre équipe.
+                        </p>
+                        <p class="text-white py-md-3">Contactez nous via
+                            <strong><a href="{% url 'home' %}#contact" class="text-white">notre formulaire</a></strong>
+                            ou directement sur <strong><a href="mailto: contact.cabmaster@gmail.com"
+                                    class="text-white worker-contact-email">contact.cabmaster@gmail.com </a></strong>
+                            pour nous faire part de vos motivations, votre secteur d'activité et vos
+                            disponibilités.
+                        </p>
+                        <p class="text-white">On attend que vous !</p>
+                        <a href="{% url 'home' %}#contact"><button class="primary-btn rounded-pill">Contact <i
+                                    class="bi bi-arrow-right-circle"></i>
+                            </button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+{% endblock %}

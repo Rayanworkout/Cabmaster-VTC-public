@@ -1,0 +1,206 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}<title>Espace Partenaire</title> {% endblock %}
+{% block content %}
+
+<style>
+    body {
+        background-color: var(--background-color);
+    }
+</style>
+
+
+
+{% if user.is_authenticated and user.worker.id == worker.id %}
+
+<iframe class="map-worker"
+    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d301576.74117926985!2d5.687757745344546!3d43.34998931383177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1700773717975!5m2!1sfr!2sfr"
+    style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+<div class="col-md-8 offset-md-2">
+
+    <h2 class="mb-3 mt-4 pb-2 display-5 text-white text-center">Mes Courses</h2>
+    <div class="text-center">
+        <button id="add-button" class="primary-btn rounded-pill mt-3 mx-auto">Nouvelle Course</button>
+    </div>
+
+    <div class="table-responsive main-content">
+        <table class="table table-striped table-hover table-bordered" id="MyTable">
+            <small style="margin-left: 15px;" class="text-white user-email">{{ user.email}}</small>
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Client</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Heure</th>
+                    <th scope="col">Départ</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Statut</th>
+                    <th scope="col">Prix</th>
+
+                </tr>
+            </thead>
+            <tbody id="courses">
+                {% if courses %}
+                {% for course in courses %}
+                <tr style="cursor: pointer;">
+                    <td>{{ course.id }}</td>
+                    {% if course.customer %}
+                    <td>{{ course.customer }}</td>
+                    {% else %}
+                    <td>Non Renseigné</td>
+                    {% endif %}
+                    <td>{{ course.happening_datetime|date:"j/m/Y" }}</td>
+                    <td>{{ course.happening_datetime|date:"H:i" }}</td>
+                    <td>{{ course.pickup_address }}</td>
+
+                    <td>{{ course.destination }}</td>
+                    {% if course.status == 'pending' %}
+                    <td style="color: #2784b8;">En Attente</td>
+                    {% endif %}
+                    <td>{{ course.course_price }} €</td>
+                </tr>
+
+
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- ADD COURSE MODAL  -->
+    <div class="modal fade bd-example-modal-lg" id="add-course-modal" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #0e0e0bcb; color: white; padding: 10px;">
+
+                <h3 class="mb-3 mt-4 pb-2 display-5 text-white text-center">Nouvelle Course</h3>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div style="border-top: 0.75px solid #161616;"></div>
+                        <h4 style="margin-top: 15px;">Client</h4>
+                        <div class="col-md-6">{{ add_course_form.customer_last_name }}</div>
+                        <div class="col-md-6">{{ add_course_form.customer_first_name }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">{{ add_course_form.customer_email }}</div>
+                        <div class="col-md-6">{{ add_course_form.customer_phone_number }}</div>
+                    </div>
+                    <div class="row">
+                        <div style="border-top: 0.75px solid #8a8a8a;"></div>
+                        <h4 style="margin-top: 15px;">Course</h4>
+                        <div class="col-md-6">{{ add_course_form.pickup_address }}</div>
+                        <div class="col-md-6">{{ add_course_form.destination }}</div>
+                    </div>
+                    <div class="row">
+                        <i id="add-datetime-message" style="margin-left: 15px; color: rgb(255, 72, 72);"></i>
+                        <div class="col-md-6">{{ add_course_form.happening_date }}</div>
+                        <div class="col-md-6">{{ add_course_form.happening_time }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4"><input placeholder="Nombre de passagers"
+                                class="booking-input-field mandatory" type="number" id="passengers" name="passengers"
+                                min="1" max="9" /></div>
+
+                        <div class="col-md-4">{{ add_course_form.payment_mode }}</div>
+                        <div class="col-md-4">{{ add_course_form.course_grade }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input placeholder="Nombre de grandes valises" class="booking-input-field mandatory"
+                                type="number" id="big-cases" name="big-cases" min="1" max="4" />
+                        </div>
+                        <div class="col-md-6">
+                            <input placeholder="Nombre de petites valises" class="booking-input-field mandatory"
+                                type="number" id="small-cases" name="small-cases" min="1" max="4" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"> {{ add_course_form.more_infos }}</div>
+                    </div>
+                </div>
+                <div id="create-success-message" style="text-align: center; margin-bottom: 15px;"></div>
+                <div class="modal-footer d-flex justify-content-between">
+                    <div id="estimate-message" class="worker-estimation-message">
+                        <li class="estimation-data">
+                        </li>
+                        <li class="estimation-data">
+                        </li>
+                        <li class="estimation-data">
+                        </li>
+                    </div>
+                    <button id="estimate-course" class="primary-btn rounded-pill mt-3">Estimer le Prix</button>
+                </div>
+                <div class="modal-footer">
+                    <button id="create-course" class="primary-btn rounded-pill mt-3">Créer</button>
+                    <button id="abort" class="rounded-pill mt-3 cancel-btn">Annuler</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPDATE COURSE MODAL -->
+    <div class="modal fade bd-example-modal-lg" id="modifModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #0e0e0bcb; color: white; padding: 10px;">
+                <h3 class="mb-3 mt-4 pb-2 display-5 text-white text-center">Modification de la Course n°<span
+                        id="modalTitle"></span></h3>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div style="border-top: 0.75px solid #f0f0f0;"></div>
+                        <h4 class="mb-3 mt-4 pb-2 display-6 text-white">Client</h4>
+                        <div class="col-md-12">
+                            <input type="text" id="customer-last-name-edit" class="booking-input-field">
+                        </div>
+                        <div class="row">
+                            <h4 class="mb-3 mt-4 pb-2 display-6 text-white">Course</h4>
+                            <i id="up-datetime-message" style="margin-left: 15px;"></i>
+                            <div class="col-md-6">
+                                <label for="course-date">Date</label>
+                                <input type="text" id="course-date" class="booking-input-field">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="course-time">Heure</label>
+                                <input type="text" id="course-time" class="booking-input-field">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="course-pickup-address">Départ</label>
+                                <input type="text" id="course-pickup-address" class="booking-input-field">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="course-destination">Destination</label>
+                                <input type="text" id="course-destination" class="booking-input-field">
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="cancel" class="cancel-btn rounded-pill mt-3" style="font-size: small;">Annuler la
+                            course</button>
+                        <button id="validate" class="primary-btn rounded-pill mt-3">Valider</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="{% static 'home/js/worker_profile.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        order: false
+        $('#MyTable').DataTable();
+    });
+</script>
+
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMME0OLHWEgDy850XOg-cbIGvpE0EGfiM&libraries=places&callback=initAutocomplete"
+    async defer>
+    </script>
+{% endif %}
+{% endblock %}

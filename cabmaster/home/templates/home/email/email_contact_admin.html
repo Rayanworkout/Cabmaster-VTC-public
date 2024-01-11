@@ -1,0 +1,17 @@
+{% extends "home/email/email_base.html" %}
+
+
+{% block content %}
+
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">De: {{ name }}</p>
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Objet: {{ subject }}</p>
+
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Message: {{ message }}</strong>
+</p>
+
+<p style="font-size: 25px; margin: 50px 0 50px 0; line-height: 1.6;">Coordonnées: {{ contacts }}</strong>
+</p>
+
+{% endblock %}
