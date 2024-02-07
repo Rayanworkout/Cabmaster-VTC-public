@@ -1,7 +1,7 @@
 
 # Cabmaster's Website public repository
 
-This website is used as a showcase website for the company as well as a personnal dashboard for Admins / Partners.
+This website is used as a professional website for the company as well as a personnal dashboard for Admins / Partners.
 **I have anonymized the files, enabling the repository to be made public.**
 
 <a href="https://www.cabmaster.fr" target="_blank">Visit Website</a>
