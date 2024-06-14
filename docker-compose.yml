@@ -1,0 +1,15 @@
+services:
+  app:
+    build: .
+    command: >
+      bash -c "python manage.py makemigrations &&
+               python manage.py migrate --noinput &&
+               python manage.py collectstatic --noinput &&
+               gunicorn --config gunicorn_config.py cabmaster.wsgi:application"
+    volumes:
+      - .:/app
+      - ./db:/app/db
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
