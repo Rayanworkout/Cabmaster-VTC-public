@@ -27,9 +27,9 @@ Server: **AWS EC2 Micro Instance under Debian 12**
 
 Web Server: **Apache2**
 
-CI-CD Pipeline: **Jenkins, Github Actions**
+CI-CD Pipeline: **Github Actions, Bash**
 
-Databases: **Sqlite3, MariaDB**
+Databases: **Sqlite3**
 
 Security: **Fail2Ban, Django decorators, Rate limits**
 
@@ -54,7 +54,7 @@ Users can login and add / modify entries in the database **(CRUD)**.
 
 Documents can also be generated through admin panel.
 
-The website is fully responsive.
+The website is fully responsive and available both in english and french.
 
 ### Security
 
