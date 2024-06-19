@@ -102,7 +102,7 @@ except ObjectDoesNotExist as e:
 
 ### CI/CD Pipeline & Deployment
 
-CI/CD pipeline is managed through **Github Actions** and **Jenkins**. All **Tests (unit, integration and end-to-end)** are run with **Github Actions** thanks to a  **.yaml** file.
+CI/CD pipeline is managed through **Github Actions**. All **tests** are run with **Github Actions** workflow.
 
 I also generate a tests report coverage with **Coverage**.
 
@@ -110,7 +110,7 @@ I also generate a tests report coverage with **Coverage**.
 
 The report above shows that 90% of the code is covered by tests.
 
-When the Dev branch is merged with the Main branch, github sends a webhook to **Jenkins**, and **Jenkins** deploys the website to the server by following instructions on a bash file.
+When the Dev branch is merged with the Main branch, github sends a webhook to my server, and the website is deployed by following instructions of a Bash script.
 
 I get success / errors alerts for each deploy to ensure everything goes right.
 
